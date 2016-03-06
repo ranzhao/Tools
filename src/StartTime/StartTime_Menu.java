@@ -1,31 +1,19 @@
 package StartTime;
 
 import java.awt.Color;
-import java.awt.HeadlessException;
-import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 
-import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-
-import GetRoScoer.GetTop;
-
 
 
 public class StartTime_Menu extends JFrame
@@ -38,20 +26,12 @@ public class StartTime_Menu extends JFrame
 		public JPanel frame = new JPanel();
        
 		public StartTime_Menu() throws IOException{
-			
-		
-			frame.setLayout(null);
-	  
-		 
+			frame.setLayout(null);  
             final JTextArea txt = new JTextArea ();
-            //textArea.setColumns(1);
-            //textArea.setRows(10);
-           // txt.setTabSize (30);
             txt.setLineWrap(true);
             txt.setWrapStyleWord(true);  
             txt.setBounds(10,10,600,452);
             add(txt);
-     
             frame.add(txt);
 		    JLabel lable = new JLabel("包名:");
 		    frame.add(lable);
@@ -60,7 +40,6 @@ public class StartTime_Menu extends JFrame
 		    final JTextField JText = new JTextField("");
 		    frame.add(JText);
 		    JText.setBounds(130, 510, 180, 30);
-		   
 			 JLabel lable1 = new JLabel("启动Activity名:");
 			 frame.add(lable1);
 			 lable1.setBounds(15, 550, 95, 25);
@@ -68,15 +47,13 @@ public class StartTime_Menu extends JFrame
 		     final JTextField JText1 = new JTextField("");
 			 frame.add(JText1);
 			 JText1.setBounds(130, 550, 180, 30);
-		   
-  
-		    
 			final JButton button1 = new JButton("开始测试");		
 			button1.setBounds(390, 530, 200, 35);  
 		    frame.add(button1);
 		
 	        //初始化下拉列表框  
-	        final JComboBox<String> box = new JComboBox();  
+	        @SuppressWarnings({ "unchecked", "rawtypes" })
+			final JComboBox<String> box = new JComboBox();  
 	        box.addItem("1次");  
 	        box.addItem("5次"); 
 	        box.addItem("10次");
@@ -84,14 +61,7 @@ public class StartTime_Menu extends JFrame
 	        box.addItem("50次"); 
 	        box.setBounds(320, 535, 55, 25);  
 	        frame.add(box); 
-	      
-	          
-	        //将下拉列表框放入表格编辑器  
-	
-		    
-	
-		    
-		    
+   
 			button1.addActionListener(new ActionListener(){//匿名类实现ActionListener接口
 				public void actionPerformed(ActionEvent e)
 				{	
@@ -132,25 +102,7 @@ public class StartTime_Menu extends JFrame
 				}   
 				});
 			
-			
-		/*	//JMenu =new JMenu(rtcp);
-			
-			JButton button1 = new JButton("1");		
-			button1.setBounds(80, 320, 60, 25);
-			JTextField JF1 = new JTextField("");
-			JF1.setBounds(120, 220, 120, 25);
-			JF1.setHorizontalAlignment(0);
-			frame.add(JF1);
-			
-		
-			button1.addActionListener(new ActionListener(){//匿名类实现ActionListener接口
-				public void actionPerformed(ActionEvent e){
-				}   
-			});*/
-		    
-			
-			
-		
+
 			setTitle("Android启动时间V1.0-----testly");
 			setBounds(0,150, 632, 628);
 			add(frame);
@@ -180,7 +132,7 @@ public class StartTime_Menu extends JFrame
 		
 		
 		
-	public static void StartTime() throws Exception{
+	public static void main(String []args) throws Exception{
 		
 		StartTime_Menu m=new StartTime_Menu();
 		m.setVisible(true);

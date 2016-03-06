@@ -15,9 +15,7 @@ public class UistallPackage {
 
 		}
 
-
-
-	public static void UistallPackage(String packageName) throws IOException, InterruptedException  {
+	public static void UistallPackageMe(String packageName) throws IOException, InterruptedException  {
 		  
 	        String unstallapk="adb uninstall "+packageName;
 		    

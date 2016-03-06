@@ -1,30 +1,17 @@
 package Monkey;
 
-import java.awt.Color;
-import java.awt.HeadlessException;
-import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 
-import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-
-import GetRoScoer.GetTop;
 
 
 
@@ -57,7 +44,7 @@ public class Monkey_Menu extends JFrame
 		    lable.setBounds(300, 30, 45, 25);
 		    
 		    
-		    final JTextField JText = new JTextField("");
+		    final JTextField JText = new JTextField("com.sds.android.ttpod");
 		    frame1.add(JText);
 		    JText.setBounds(360, 30, 180, 30);
 
@@ -144,21 +131,11 @@ public class Monkey_Menu extends JFrame
 			final JButton button1 = new JButton("开始测试");		
 			button1.setBounds(400, 300, 200, 35);  
 		    frame1.add(button1);
-		
-	        //初始化下拉列表框  
-	      /*  final JComboBox<String> box = new JComboBox();  
-	        box.addItem("1次");  
-	        box.addItem("5次"); 
-	        box.addItem("10次");
-	        box.addItem("20次"); 
-	        box.addItem("50次"); 
-	        box.setBounds(320, 135, 55, 25);  
-	        frame1.add(box); */
 		    JLabel lable13 = new JLabel("延时:");
 			frame1.add(lable13);
 		    lable13.setBounds(280, 300, 200, 35);   
 	        //初始化下拉列表框  
-	        final JComboBox<String> box = new JComboBox();  
+	        final JComboBox<String> box = new JComboBox<String>();  
 	        box.addItem("0");  
 	        box.addItem("0.1秒");  
 	        box.addItem("0.5秒"); 
@@ -170,15 +147,12 @@ public class Monkey_Menu extends JFrame
 
 		    
 		    
-			button1.addActionListener(new ActionListener(){//匿名类实现ActionListener接口
-				public void actionPerformed(ActionEvent e)
-				{	
-					new Thread(new Runnable(){
-			            public void run() {
-			        		try {
-							
-				
-					
+	button1.addActionListener(new ActionListener(){//匿名类实现ActionListener接口
+		public void actionPerformed(ActionEvent e)
+		{	
+			new Thread(new Runnable(){
+	            public void run() {
+	        		try {
 					String anyevent;
 					String touch;
 					String motion;
