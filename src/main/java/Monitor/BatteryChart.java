@@ -40,7 +40,7 @@ public class BatteryChart extends ChartPanel implements Runnable {
 	public void run() {
 			while(true) {  
 	        try {  
-	        if(GetTop.cpu(Menu.text)==-0.1){
+	        if(GetTop.cpu(MonitorJFrame.text)==-0.1){
 	        		break;
 	        	}else {
 	        		timeSeries.add(new Millisecond(),Getbattery.battery() );  

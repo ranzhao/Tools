@@ -45,10 +45,10 @@ private static JFreeChart createChart(String chartContent,String title,String ya
 	{
 		while(true){ 
 			try { 
-				if(GetTop.cpu(Menu.text)==-0.1){
+				if(GetTop.cpu(MonitorJFrame.text)==-0.1){
 	        		break;
 	        	}else{
-		        	timeSeries.add(new Millisecond(),GetTop.cpu(Menu.text) );  
+		        	timeSeries.add(new Millisecond(),GetTop.cpu(MonitorJFrame.text) );
 		            Thread.sleep(100);
 		            log();
 	        	} 
@@ -61,12 +61,12 @@ private static JFreeChart createChart(String chartContent,String title,String ya
 
 @SuppressWarnings("unused")
 	private double randomNum() throws IOException{ 	      
-	return GetTop.cpu(Menu.text);
+	return GetTop.cpu(MonitorJFrame.text);
 }
 
 public static void log() throws IOException, InterruptedException{
-	if (Menu.log==true){
-			 NSlog.writelogs("D:/log/Monitor_log",time,Menu.time+"                   "+GetTop.cpu(Menu.text)+"%"+"              "+HeapChart.randomNum()/1024+"MB"+"               "+FlowChart.randomNum()+"Kb");
+	if (MonitorJFrame.log==true){
+			 NSlog.writelogs("D:/log/Monitor_log",time, MonitorJFrame.time+"                   "+GetTop.cpu(MonitorJFrame.text)+"%"+"              "+HeapChart.randomNum()/1024+"MB"+"               "+FlowChart.randomNum()+"Kb");
 		}
 	 } 
 }  

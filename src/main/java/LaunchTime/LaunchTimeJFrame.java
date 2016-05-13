@@ -9,14 +9,9 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import javax.swing.*;
 
-public class LaunchTime_Menu extends JFrame
+public class LaunchTimeJFrame extends JFrame
 		implements ActionListener{
 	/**
 	 *
@@ -24,8 +19,9 @@ public class LaunchTime_Menu extends JFrame
 	private static final long serialVersionUID = 1L;
 	private JPanel panel = new JPanel();
 
-	public LaunchTime_Menu() throws IOException{
+	public LaunchTimeJFrame() throws IOException{
 		panel.setLayout(null);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 		final JTextArea resultTextArea = createResultTextArea(panel);
 
@@ -128,7 +124,7 @@ public class LaunchTime_Menu extends JFrame
 	}
 
 	public static void main(String []args) throws Exception{
-		LaunchTime_Menu m=new LaunchTime_Menu();
+		LaunchTimeJFrame m=new LaunchTimeJFrame();
 		m.setVisible(true);
 	}
 }

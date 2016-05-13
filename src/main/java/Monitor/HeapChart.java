@@ -42,10 +42,10 @@ public class HeapChart extends ChartPanel implements Runnable
     public void run()  {  
         while(true)  {  
         try  {  
-        	if(GetTop.cpu(Menu.text)==-0.1){
+        	if(GetTop.cpu(MonitorJFrame.text)==-0.1){
         		break;
         	}else{
-            timeSeries.add(new Millisecond(),GetTop.heap(Menu.text) );  
+            timeSeries.add(new Millisecond(),GetTop.heap(MonitorJFrame.text) );
             Thread.sleep(100);  
          }  
         }
@@ -55,6 +55,6 @@ public class HeapChart extends ChartPanel implements Runnable
         }         
     }   
     public static double randomNum() throws IOException  {     
-        return GetTop.heap(Menu.text);  
+        return GetTop.heap(MonitorJFrame.text);
     }  
 }  

@@ -20,7 +20,7 @@ public class AliPlanetLaunchLogParser implements LaunchLogParser {
     private int timeWelcomeActivityAppear;
 
     public AliPlanetLaunchLogParser(String log) {
-//        System.out.println(log);
+        System.out.println(log);
         Arrays.asList(log.split("\n")).stream().forEach(line -> matchJob(line));
     }
 

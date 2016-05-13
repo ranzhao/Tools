@@ -46,11 +46,11 @@ private static JFreeChart createChart(String chartContent,String title,String ya
 public void run(){
 	while(true)  {  
         try {  
-        	if(GetTop.cpu(Menu.text)==-0.1){
+        	if(GetTop.cpu(MonitorJFrame.text)==-0.1){
         		JOptionPane.showMessageDialog(new JFrame(), "请检查设备连接");
         		break;
         	}else{
-			timeSeries.add(new Millisecond(),Get_Flow.Flowmille(Menu.text));  
+			timeSeries.add(new Millisecond(),Get_Flow.Flowmille(MonitorJFrame.text));
 		    Thread.sleep(100);
 		 }  
         }
@@ -67,6 +67,6 @@ public void run(){
 
 public static double randomNum() throws IOException, InterruptedException
 {
-	return GetTop.cpu(Menu.text);
+	return GetTop.cpu(MonitorJFrame.text);
 }  
 }  
